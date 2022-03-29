@@ -1,0 +1,1005 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+
+<http://linkedscience.org/teach/ns#teacher/0> <http://rdfs.org/sioc/ns#id> "1";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "19";
+  <https://schema.org/department> "AHS" .
+
+<http://linkedscience.org/teach/ns#teacher/1> <http://rdfs.org/sioc/ns#id> "2";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "21";
+  <https://schema.org/department> "AHS" .
+
+<http://linkedscience.org/teach/ns#teacher/2> <http://rdfs.org/sioc/ns#id> "3";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "20";
+  <https://schema.org/department> "AHS" .
+
+<http://linkedscience.org/teach/ns#teacher/3> <http://rdfs.org/sioc/ns#id> "4";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "23";
+  <https://schema.org/department> "AHS" .
+
+<http://linkedscience.org/teach/ns#teacher/4> <http://rdfs.org/sioc/ns#id> "5";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "31";
+  <https://schema.org/department> "AHS" .
+
+<http://linkedscience.org/teach/ns#teacher/5> <http://rdfs.org/sioc/ns#id> "6";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "22";
+  <https://schema.org/department> "AHS" .
+
+<http://linkedscience.org/teach/ns#teacher/6> <http://rdfs.org/sioc/ns#id> "7";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "35";
+  <https://schema.org/department> "AHS" .
+
+<http://linkedscience.org/teach/ns#teacher/7> <http://rdfs.org/sioc/ns#id> "8";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "23";
+  <https://schema.org/department> "AHS" .
+
+<http://linkedscience.org/teach/ns#teacher/8> <http://rdfs.org/sioc/ns#id> "9";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "64";
+  <https://schema.org/department> "AHS" .
+
+<http://linkedscience.org/teach/ns#teacher/9> <http://rdfs.org/sioc/ns#id> "10";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "30";
+  <https://schema.org/department> "AHS" .
+
+<http://linkedscience.org/teach/ns#teacher/10> <http://rdfs.org/sioc/ns#id> "11";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "67";
+  <https://schema.org/department> "AHS" .
+
+<http://linkedscience.org/teach/ns#teacher/11> <http://rdfs.org/sioc/ns#id> "12";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "35";
+  <https://schema.org/department> "ARTS" .
+
+<http://linkedscience.org/teach/ns#teacher/12> <http://rdfs.org/sioc/ns#id> "13";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "58";
+  <https://schema.org/department> "ARTS" .
+
+<http://linkedscience.org/teach/ns#teacher/13> <http://rdfs.org/sioc/ns#id> "14";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "24";
+  <https://schema.org/department> "ARTS" .
+
+<http://linkedscience.org/teach/ns#teacher/14> <http://rdfs.org/sioc/ns#id> "15";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "37";
+  <https://schema.org/department> "ARTS" .
+
+<http://linkedscience.org/teach/ns#teacher/15> <http://rdfs.org/sioc/ns#id> "16";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "22";
+  <https://schema.org/department> "ARTS" .
+
+<http://linkedscience.org/teach/ns#teacher/16> <http://rdfs.org/sioc/ns#id> "17";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "35";
+  <https://schema.org/department> "ARTS" .
+
+<http://linkedscience.org/teach/ns#teacher/17> <http://rdfs.org/sioc/ns#id> "18";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "20";
+  <https://schema.org/department> "ARTS" .
+
+<http://linkedscience.org/teach/ns#teacher/18> <http://rdfs.org/sioc/ns#id> "19";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "52";
+  <https://schema.org/department> "ARTS" .
+
+<http://linkedscience.org/teach/ns#teacher/19> <http://rdfs.org/sioc/ns#id> "20";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "35";
+  <https://schema.org/department> "ARTS" .
+
+<http://linkedscience.org/teach/ns#teacher/20> <http://rdfs.org/sioc/ns#id> "21";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "35";
+  <https://schema.org/department> "ARTS" .
+
+<http://linkedscience.org/teach/ns#teacher/21> <http://rdfs.org/sioc/ns#id> "22";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "25";
+  <https://schema.org/department> "ARTS" .
+
+<http://linkedscience.org/teach/ns#teacher/22> <http://rdfs.org/sioc/ns#id> "23";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "46";
+  <https://schema.org/department> "ARTS" .
+
+<http://linkedscience.org/teach/ns#teacher/23> <http://rdfs.org/sioc/ns#id> "24";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "31";
+  <https://schema.org/department> "ENV" .
+
+<http://linkedscience.org/teach/ns#teacher/24> <http://rdfs.org/sioc/ns#id> "25";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "54";
+  <https://schema.org/department> "ENV" .
+
+<http://linkedscience.org/teach/ns#teacher/25> <http://rdfs.org/sioc/ns#id> "26";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "29";
+  <https://schema.org/department> "ENV" .
+
+<http://linkedscience.org/teach/ns#teacher/26> <http://rdfs.org/sioc/ns#id> "27";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "45";
+  <https://schema.org/department> "ENV" .
+
+<http://linkedscience.org/teach/ns#teacher/27> <http://rdfs.org/sioc/ns#id> "28";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "35";
+  <https://schema.org/department> "ENV" .
+
+<http://linkedscience.org/teach/ns#teacher/28> <http://rdfs.org/sioc/ns#id> "29";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "40";
+  <https://schema.org/department> "ENV" .
+
+<http://linkedscience.org/teach/ns#teacher/29> <http://rdfs.org/sioc/ns#id> "30";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "23";
+  <https://schema.org/department> "ENV" .
+
+<http://linkedscience.org/teach/ns#teacher/30> <http://rdfs.org/sioc/ns#id> "31";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "60";
+  <https://schema.org/department> "ENV" .
+
+<http://linkedscience.org/teach/ns#teacher/31> <http://rdfs.org/sioc/ns#id> "32";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "21";
+  <https://schema.org/department> "ENV" .
+
+<http://linkedscience.org/teach/ns#teacher/32> <http://rdfs.org/sioc/ns#id> "33";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "53";
+  <https://schema.org/department> "ENV" .
+
+<http://linkedscience.org/teach/ns#teacher/33> <http://rdfs.org/sioc/ns#id> "34";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "18";
+  <https://schema.org/department> "ENV" .
+
+<http://linkedscience.org/teach/ns#teacher/34> <http://rdfs.org/sioc/ns#id> "35";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "49";
+  <https://schema.org/department> "ENV" .
+
+<http://linkedscience.org/teach/ns#teacher/35> <http://rdfs.org/sioc/ns#id> "36";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "21";
+  <https://schema.org/department> "ENV" .
+
+<http://linkedscience.org/teach/ns#teacher/36> <http://rdfs.org/sioc/ns#id> "37";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "42";
+  <https://schema.org/department> "ENV" .
+
+<http://linkedscience.org/teach/ns#teacher/37> <http://rdfs.org/sioc/ns#id> "38";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "30";
+  <https://schema.org/department> "REN" .
+
+<http://linkedscience.org/teach/ns#teacher/38> <http://rdfs.org/sioc/ns#id> "39";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "36";
+  <https://schema.org/department> "REN" .
+
+<http://linkedscience.org/teach/ns#teacher/39> <http://rdfs.org/sioc/ns#id> "40";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "20";
+  <https://schema.org/department> "REN" .
+
+<http://linkedscience.org/teach/ns#teacher/40> <http://rdfs.org/sioc/ns#id> "41";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "65";
+  <https://schema.org/department> "REN" .
+
+<http://linkedscience.org/teach/ns#teacher/41> <http://rdfs.org/sioc/ns#id> "42";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "24";
+  <https://schema.org/department> "REN" .
+
+<http://linkedscience.org/teach/ns#teacher/42> <http://rdfs.org/sioc/ns#id> "43";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "48";
+  <https://schema.org/department> "REN" .
+
+<http://linkedscience.org/teach/ns#teacher/43> <http://rdfs.org/sioc/ns#id> "44";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "31";
+  <https://schema.org/department> "REN" .
+
+<http://linkedscience.org/teach/ns#teacher/44> <http://rdfs.org/sioc/ns#id> "45";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "49";
+  <https://schema.org/department> "REN" .
+
+<http://linkedscience.org/teach/ns#teacher/45> <http://rdfs.org/sioc/ns#id> "46";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "24";
+  <https://schema.org/department> "REN" .
+
+<http://linkedscience.org/teach/ns#teacher/46> <http://rdfs.org/sioc/ns#id> "47";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "50";
+  <https://schema.org/department> "REN" .
+
+<http://linkedscience.org/teach/ns#teacher/47> <http://rdfs.org/sioc/ns#id> "48";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "27";
+  <https://schema.org/department> "REN" .
+
+<http://linkedscience.org/teach/ns#teacher/48> <http://rdfs.org/sioc/ns#id> "49";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "29";
+  <https://schema.org/department> "REN" .
+
+<http://linkedscience.org/teach/ns#teacher/49> <http://rdfs.org/sioc/ns#id> "50";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "31";
+  <https://schema.org/department> "REN" .
+
+<http://linkedscience.org/teach/ns#teacher/50> <http://rdfs.org/sioc/ns#id> "51";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "49";
+  <https://schema.org/department> "CFM" .
+
+<http://linkedscience.org/teach/ns#teacher/51> <http://rdfs.org/sioc/ns#id> "52";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "33";
+  <https://schema.org/department> "CFM" .
+
+<http://linkedscience.org/teach/ns#teacher/52> <http://rdfs.org/sioc/ns#id> "53";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "31";
+  <https://schema.org/department> "CFM" .
+
+<http://linkedscience.org/teach/ns#teacher/53> <http://rdfs.org/sioc/ns#id> "54";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "59";
+  <https://schema.org/department> "CFM" .
+
+<http://linkedscience.org/teach/ns#teacher/54> <http://rdfs.org/sioc/ns#id> "55";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "50";
+  <https://schema.org/department> "CFM" .
+
+<http://linkedscience.org/teach/ns#teacher/55> <http://rdfs.org/sioc/ns#id> "56";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "47";
+  <https://schema.org/department> "CFM" .
+
+<http://linkedscience.org/teach/ns#teacher/56> <http://rdfs.org/sioc/ns#id> "57";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "51";
+  <https://schema.org/department> "CFM" .
+
+<http://linkedscience.org/teach/ns#teacher/57> <http://rdfs.org/sioc/ns#id> "58";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "69";
+  <https://schema.org/department> "CFM" .
+
+<http://linkedscience.org/teach/ns#teacher/58> <http://rdfs.org/sioc/ns#id> "59";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "27";
+  <https://schema.org/department> "CFM" .
+
+<http://linkedscience.org/teach/ns#teacher/59> <http://rdfs.org/sioc/ns#id> "60";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "53";
+  <https://schema.org/department> "CFM" .
+
+<http://linkedscience.org/teach/ns#teacher/60> <http://rdfs.org/sioc/ns#id> "61";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "70";
+  <https://schema.org/department> "ENG" .
+
+<http://linkedscience.org/teach/ns#teacher/61> <http://rdfs.org/sioc/ns#id> "62";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "19";
+  <https://schema.org/department> "ENG" .
+
+<http://linkedscience.org/teach/ns#teacher/62> <http://rdfs.org/sioc/ns#id> "63";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "67";
+  <https://schema.org/department> "ENG" .
+
+<http://linkedscience.org/teach/ns#teacher/63> <http://rdfs.org/sioc/ns#id> "64";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "54";
+  <https://schema.org/department> "ENG" .
+
+<http://linkedscience.org/teach/ns#teacher/64> <http://rdfs.org/sioc/ns#id> "65";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "63";
+  <https://schema.org/department> "ENG" .
+
+<http://linkedscience.org/teach/ns#teacher/65> <http://rdfs.org/sioc/ns#id> "66";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "18";
+  <https://schema.org/department> "ENG" .
+
+<http://linkedscience.org/teach/ns#teacher/66> <http://rdfs.org/sioc/ns#id> "67";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "43";
+  <https://schema.org/department> "ENG" .
+
+<http://linkedscience.org/teach/ns#teacher/67> <http://rdfs.org/sioc/ns#id> "68";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "68";
+  <https://schema.org/department> "ENG" .
+
+<http://linkedscience.org/teach/ns#teacher/68> <http://rdfs.org/sioc/ns#id> "69";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "19";
+  <https://schema.org/department> "ENG" .
+
+<http://linkedscience.org/teach/ns#teacher/69> <http://rdfs.org/sioc/ns#id> "70";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "32";
+  <https://schema.org/department> "ENG" .
+
+<http://linkedscience.org/teach/ns#teacher/70> <http://rdfs.org/sioc/ns#id> "71";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "70";
+  <https://schema.org/department> "ENG" .
+
+<http://linkedscience.org/teach/ns#teacher/71> <http://rdfs.org/sioc/ns#id> "72";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "47";
+  <https://schema.org/department> "ENG" .
+
+<http://linkedscience.org/teach/ns#teacher/72> <http://rdfs.org/sioc/ns#id> "73";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "60";
+  <https://schema.org/department> "ENG" .
+
+<http://linkedscience.org/teach/ns#teacher/73> <http://rdfs.org/sioc/ns#id> "74";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "60";
+  <https://schema.org/department> "ENG" .
+
+<http://linkedscience.org/teach/ns#teacher/74> <http://rdfs.org/sioc/ns#id> "75";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "59";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/75> <http://rdfs.org/sioc/ns#id> "76";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "26";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/76> <http://rdfs.org/sioc/ns#id> "77";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "45";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/77> <http://rdfs.org/sioc/ns#id> "78";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "40";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/78> <http://rdfs.org/sioc/ns#id> "79";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "23";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/79> <http://rdfs.org/sioc/ns#id> "80";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "49";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/80> <http://rdfs.org/sioc/ns#id> "81";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "57";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/81> <http://rdfs.org/sioc/ns#id> "82";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "38";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/82> <http://rdfs.org/sioc/ns#id> "83";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "67";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/83> <http://rdfs.org/sioc/ns#id> "84";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "46";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/84> <http://rdfs.org/sioc/ns#id> "85";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "21";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/85> <http://rdfs.org/sioc/ns#id> "86";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "48";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/86> <http://rdfs.org/sioc/ns#id> "87";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "55";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/87> <http://rdfs.org/sioc/ns#id> "88";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "22";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/88> <http://rdfs.org/sioc/ns#id> "89";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "34";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/89> <http://rdfs.org/sioc/ns#id> "90";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "50";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/90> <http://rdfs.org/sioc/ns#id> "91";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "68";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/91> <http://rdfs.org/sioc/ns#id> "92";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "18";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/92> <http://rdfs.org/sioc/ns#id> "93";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "48";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/93> <http://rdfs.org/sioc/ns#id> "94";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "40";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/94> <http://rdfs.org/sioc/ns#id> "95";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "32";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/95> <http://rdfs.org/sioc/ns#id> "96";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "24";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/96> <http://rdfs.org/sioc/ns#id> "97";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "47";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/97> <http://rdfs.org/sioc/ns#id> "98";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "27";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/98> <http://rdfs.org/sioc/ns#id> "99";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "48";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/99> <http://rdfs.org/sioc/ns#id> "100";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "20";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/100> <http://rdfs.org/sioc/ns#id> "101";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "23";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/101> <http://rdfs.org/sioc/ns#id> "102";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "49";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/102> <http://rdfs.org/sioc/ns#id> "103";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "67";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/103> <http://rdfs.org/sioc/ns#id> "104";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "26";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/104> <http://rdfs.org/sioc/ns#id> "105";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "49";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/105> <http://rdfs.org/sioc/ns#id> "106";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "21";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/106> <http://rdfs.org/sioc/ns#id> "107";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "66";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/107> <http://rdfs.org/sioc/ns#id> "108";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "54";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/108> <http://rdfs.org/sioc/ns#id> "109";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "68";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/109> <http://rdfs.org/sioc/ns#id> "110";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "66";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/110> <http://rdfs.org/sioc/ns#id> "111";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "65";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/111> <http://rdfs.org/sioc/ns#id> "112";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "19";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/112> <http://rdfs.org/sioc/ns#id> "113";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "38";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/113> <http://rdfs.org/sioc/ns#id> "114";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "19";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/114> <http://rdfs.org/sioc/ns#id> "115";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "18";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/115> <http://rdfs.org/sioc/ns#id> "116";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "19";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/116> <http://rdfs.org/sioc/ns#id> "117";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "63";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/117> <http://rdfs.org/sioc/ns#id> "118";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "49";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/118> <http://rdfs.org/sioc/ns#id> "119";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "51";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/119> <http://rdfs.org/sioc/ns#id> "120";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "50";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/120> <http://rdfs.org/sioc/ns#id> "121";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "27";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/121> <http://rdfs.org/sioc/ns#id> "122";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "38";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/122> <http://rdfs.org/sioc/ns#id> "123";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "40";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/123> <http://rdfs.org/sioc/ns#id> "124";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "39";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/124> <http://rdfs.org/sioc/ns#id> "125";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "23";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/125> <http://rdfs.org/sioc/ns#id> "126";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "31";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/126> <http://rdfs.org/sioc/ns#id> "127";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "43";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/127> <http://rdfs.org/sioc/ns#id> "128";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "40";
+  <https://schema.org/department> "MATH" .
+
+<http://linkedscience.org/teach/ns#teacher/128> <http://rdfs.org/sioc/ns#id> "129";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "59";
+  <https://schema.org/department> "SCI" .
+
+<http://linkedscience.org/teach/ns#teacher/129> <http://rdfs.org/sioc/ns#id> "130";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "38";
+  <https://schema.org/department> "SCI" .
+
+<http://linkedscience.org/teach/ns#teacher/130> <http://rdfs.org/sioc/ns#id> "131";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "47";
+  <https://schema.org/department> "SCI" .
+
+<http://linkedscience.org/teach/ns#teacher/131> <http://rdfs.org/sioc/ns#id> "132";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "39";
+  <https://schema.org/department> "SCI" .
+
+<http://linkedscience.org/teach/ns#teacher/132> <http://rdfs.org/sioc/ns#id> "133";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "25";
+  <https://schema.org/department> "SCI" .
+
+<http://linkedscience.org/teach/ns#teacher/133> <http://rdfs.org/sioc/ns#id> "134";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "31";
+  <https://schema.org/department> "SCI" .
+
+<http://linkedscience.org/teach/ns#teacher/134> <http://rdfs.org/sioc/ns#id> "135";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "20";
+  <https://schema.org/department> "SCI" .
+
+<http://linkedscience.org/teach/ns#teacher/135> <http://rdfs.org/sioc/ns#id> "136";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "29";
+  <https://schema.org/department> "SCI" .
+
+<http://linkedscience.org/teach/ns#teacher/136> <http://rdfs.org/sioc/ns#id> "137";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "44";
+  <https://schema.org/department> "SCI" .
+
+<http://linkedscience.org/teach/ns#teacher/137> <http://rdfs.org/sioc/ns#id> "138";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "32";
+  <https://schema.org/department> "SCI" .
+
+<http://linkedscience.org/teach/ns#teacher/138> <http://rdfs.org/sioc/ns#id> "139";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "19";
+  <https://schema.org/department> "SCI" .
+
+<http://linkedscience.org/teach/ns#teacher/139> <http://rdfs.org/sioc/ns#id> "140";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "35";
+  <https://schema.org/department> "SCI" .
+
+<http://linkedscience.org/teach/ns#teacher/140> <http://rdfs.org/sioc/ns#id> "141";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "57";
+  <https://schema.org/department> "SCI" .
+
+<http://linkedscience.org/teach/ns#teacher/141> <http://rdfs.org/sioc/ns#id> "142";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "32";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/142> <http://rdfs.org/sioc/ns#id> "143";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "28";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/143> <http://rdfs.org/sioc/ns#id> "144";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "32";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/144> <http://rdfs.org/sioc/ns#id> "145";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "25";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/145> <http://rdfs.org/sioc/ns#id> "146";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "28";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/146> <http://rdfs.org/sioc/ns#id> "147";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "48";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/147> <http://rdfs.org/sioc/ns#id> "148";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "32";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/148> <http://rdfs.org/sioc/ns#id> "149";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "34";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/149> <http://rdfs.org/sioc/ns#id> "150";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "34";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/150> <http://rdfs.org/sioc/ns#id> "151";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "43";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/151> <http://rdfs.org/sioc/ns#id> "152";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "39";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/152> <http://rdfs.org/sioc/ns#id> "153";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "44";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/153> <http://rdfs.org/sioc/ns#id> "154";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "38";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/154> <http://rdfs.org/sioc/ns#id> "155";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "47";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/155> <http://rdfs.org/sioc/ns#id> "156";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "27";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/156> <http://rdfs.org/sioc/ns#id> "157";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "37";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/157> <http://rdfs.org/sioc/ns#id> "158";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "30";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/158> <http://rdfs.org/sioc/ns#id> "159";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "34";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/159> <http://rdfs.org/sioc/ns#id> "160";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "30";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/160> <http://rdfs.org/sioc/ns#id> "161";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "56";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/161> <http://rdfs.org/sioc/ns#id> "162";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "29";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/162> <http://rdfs.org/sioc/ns#id> "163";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "19";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/163> <http://rdfs.org/sioc/ns#id> "164";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "31";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/164> <http://rdfs.org/sioc/ns#id> "165";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "50";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/165> <http://rdfs.org/sioc/ns#id> "166";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "36";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/166> <http://rdfs.org/sioc/ns#id> "167";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "42";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/167> <http://rdfs.org/sioc/ns#id> "168";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "33";
+  <https://schema.org/department> "SE" .
+
+<http://linkedscience.org/teach/ns#teacher/168> <http://rdfs.org/sioc/ns#id> "169";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "36";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/169> <http://rdfs.org/sioc/ns#id> "170";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "32";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/170> <http://rdfs.org/sioc/ns#id> "171";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "40";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/171> <http://rdfs.org/sioc/ns#id> "172";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "28";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/172> <http://rdfs.org/sioc/ns#id> "173";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "36";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/173> <http://rdfs.org/sioc/ns#id> "174";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "36";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/174> <http://rdfs.org/sioc/ns#id> "175";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "52";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/175> <http://rdfs.org/sioc/ns#id> "176";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "30";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/176> <http://rdfs.org/sioc/ns#id> "177";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "58";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/177> <http://rdfs.org/sioc/ns#id> "178";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "27";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/178> <http://rdfs.org/sioc/ns#id> "179";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "59";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/179> <http://rdfs.org/sioc/ns#id> "180";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "35";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/180> <http://rdfs.org/sioc/ns#id> "181";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "37";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/181> <http://rdfs.org/sioc/ns#id> "182";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "32";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/182> <http://rdfs.org/sioc/ns#id> "183";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "46";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/183> <http://rdfs.org/sioc/ns#id> "184";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "29";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/184> <http://rdfs.org/sioc/ns#id> "185";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "41";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/185> <http://rdfs.org/sioc/ns#id> "186";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "30";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/186> <http://rdfs.org/sioc/ns#id> "187";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "54";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/187> <http://rdfs.org/sioc/ns#id> "188";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "28";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/188> <http://rdfs.org/sioc/ns#id> "189";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "41";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/189> <http://rdfs.org/sioc/ns#id> "190";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "36";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/190> <http://rdfs.org/sioc/ns#id> "191";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "34";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/191> <http://rdfs.org/sioc/ns#id> "192";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "32";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/192> <http://rdfs.org/sioc/ns#id> "193";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "33";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/193> <http://rdfs.org/sioc/ns#id> "194";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "38";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/194> <http://rdfs.org/sioc/ns#id> "195";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "47";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/195> <http://rdfs.org/sioc/ns#id> "196";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "35";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/196> <http://rdfs.org/sioc/ns#id> "197";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Female";
+  <http://www.identity.org/ontologies/identity.owl#age> "45";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/197> <http://rdfs.org/sioc/ns#id> "198";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "32";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/198> <http://rdfs.org/sioc/ns#id> "199";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "32";
+  <https://schema.org/department> "THL" .
+
+<http://linkedscience.org/teach/ns#teacher/199> <http://rdfs.org/sioc/ns#id> "200";
+  <http://www.bbc.co.uk/ontologies/coreconcepts/gender> "Male";
+  <http://www.identity.org/ontologies/identity.owl#age> "30";
+  <https://schema.org/department> "THL" .
