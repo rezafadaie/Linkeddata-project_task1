@@ -1,0 +1,1909 @@
+@prefix : <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/Project.ttl> .
+
+<https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/Project.ttl> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://dbpedia.org/ontology/student
+<http://dbpedia.org/ontology/student> rdf:type owl:AnnotationProperty .
+
+
+###  http://linkedscience.org/teach/ns#teacher
+<http://linkedscience.org/teach/ns#teacher> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.kanzaki.com/ns/whois#academicCareer
+<http://www.kanzaki.com/ns/whois#academicCareer> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#size
+rdfs:size rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/Date
+<https://schema.org/Date> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/MeetingRoom
+<https://schema.org/MeetingRoom> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/Time
+<https://schema.org/Time> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/department
+<https://schema.org/department> rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/sbeo#locatedIn
+<https://w3id.org/sbeo#locatedIn> rdf:type owl:AnnotationProperty .
+
+
+###  https://www.ica.org/standards/RiC/ontology#isOrWasOccupiedBy
+<https://www.ica.org/standards/RiC/ontology#isOrWasOccupiedBy> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#assigned_to
+:assigned_to rdf:type owl:ObjectProperty ;
+             rdfs:domain :Department ,
+                         :MeetingRoom .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#cancels
+:cancels rdf:type owl:ObjectProperty ;
+         owl:inverseOf :reserves ;
+         rdfs:domain :Person .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#has
+:has rdf:type owl:ObjectProperty ;
+     rdfs:domain :Building .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#is_occupied
+:is_occupied rdf:type owl:ObjectProperty ;
+             rdfs:domain :Person ;
+             <https://www.ica.org/standards/RiC/ontology#isOrWasOccupiedBy> <http://www.semanticweb.org/refad/ontologies/2022/2/IsOccupied> .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#reserves
+:reserves rdf:type owl:ObjectProperty ;
+          rdfs:domain :Person .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#studies_in
+:studies_in rdf:type owl:ObjectProperty ;
+            rdfs:domain :Student .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#works_in
+:works_in rdf:type owl:ObjectProperty ;
+          rdfs:domain :Teacher .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#BigMeetingRoom
+:BigMeetingRoom rdf:type owl:Class ;
+                rdfs:subClassOf :MeetingRoom ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :is_occupied ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :Teacher
+                                ] ;
+                owl:disjointWith :SmallMeetingRoom ;
+                rdfs:size "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Building
+:Building rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :has ;
+                            owl:someValuesFrom :Department
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :has ;
+                            owl:someValuesFrom :MeetingRoom
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :has ;
+                            owl:someValuesFrom :Person
+                          ] ;
+          <https://w3id.org/sbeo#locatedIn> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Calendar
+:Calendar rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :has ;
+                            owl:someValuesFrom :MeetingRoom
+                          ] .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Date
+:Date rdf:type owl:Class ;
+      rdfs:subClassOf :Calendar ;
+      <https://schema.org/Date> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Department
+:Department rdf:type owl:Class ;
+            rdfs:subClassOf :Building ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :has ;
+                              owl:someValuesFrom :Person
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :assigned_to ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Building
+                            ] ;
+            <https://schema.org/department> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#GraduateStudent
+:GraduateStudent rdf:type owl:Class ;
+                 rdfs:subClassOf :Student ;
+                 owl:disjointWith :UndergraduateStudent ;
+                 <http://www.kanzaki.com/ns/whois#academicCareer> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#MeetingRoom
+:MeetingRoom rdf:type owl:Class ;
+             rdfs:subClassOf :Building ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :has ;
+                               owl:someValuesFrom :Calendar
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :assigned_to ;
+                               owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Person
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :assigned_to ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Building
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :assigned_to ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Person
+                             ] ;
+             <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :reserves ;
+                          owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                          owl:onClass :SmallMeetingRoom
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :reserves ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :SmallMeetingRoom
+                        ] .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SmallMeetingRoom
+:SmallMeetingRoom rdf:type owl:Class ;
+                  rdfs:subClassOf :MeetingRoom ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :is_occupied ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :Person
+                                  ] ;
+                  rdfs:size "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Student
+:Student rdf:type owl:Class ;
+         rdfs:subClassOf :Person ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :studies_in ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Building
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :studies_in ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Department
+                         ] ;
+         owl:disjointWith :Teacher ;
+         <http://dbpedia.org/ontology/student> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Teacher
+:Teacher rdf:type owl:Class ;
+         rdfs:subClassOf :Person ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :reserves ;
+                           owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass :BigMeetingRoom
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :works_in ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Building
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :works_in ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Department
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :reserves ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :BigMeetingRoom
+                         ] ;
+         <http://linkedscience.org/teach/ns#teacher> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Time
+:Time rdf:type owl:Class ;
+      rdfs:subClassOf :Calendar ;
+      <https://schema.org/Time> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#UndergraduateStudent
+:UndergraduateStudent rdf:type owl:Class ;
+                      rdfs:subClassOf :Student ;
+                      <http://www.kanzaki.com/ns/whois#academicCareer> "" .
+
+
+###  https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/has1#Student05da6a44_d2f4_463b_a73a_05939be51570
+<https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/has1#Student05da6a44_d2f4_463b_a73a_05939be51570> rdf:type owl:Class ;
+                                                                                                                              rdfs:subClassOf :Building ;
+                                                                                                                              rdfs:label "BuildingName"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  has1#Student012cd811_038a_43f9_938a_da038648169a
+<has1#Student012cd811_038a_43f9_938a_da038648169a> rdf:type owl:NamedIndividual ,
+                                                            :Department ;
+                                                   rdfs:label "REN"@en .
+
+
+###  has1#Student2cc901c1_958d_4b5c_99d2_4b4e670e11f3
+<has1#Student2cc901c1_958d_4b5c_99d2_4b4e670e11f3> rdf:type owl:NamedIndividual ,
+                                                            :Department ;
+                                                   rdfs:label "ENV"@en .
+
+
+###  has1#Student436537ea_c7ab_4900_b65d_18a7abc24e39
+<has1#Student436537ea_c7ab_4900_b65d_18a7abc24e39> rdf:type owl:NamedIndividual ,
+                                                            <https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/has1#Student05da6a44_d2f4_463b_a73a_05939be51570> ;
+                                                   :has :ZI1016 ,
+                                                        :ZI1061 ,
+                                                        :ZI2022 ,
+                                                        :ZI2105 ,
+                                                        :ZI2126 ,
+                                                        :ZI4070 ,
+                                                        :ZI4110 ,
+                                                        :ZI5038 ,
+                                                        :ZI5057 ;
+                                                   rdfs:label "Zilverling"@en .
+
+
+###  has1#Student4f30587f_717d_4e6a_89a9_fef366e9d9c8
+<has1#Student4f30587f_717d_4e6a_89a9_fef366e9d9c8> rdf:type owl:NamedIndividual ,
+                                                            :Department ;
+                                                   rdfs:label "SCI"@en .
+
+
+###  has1#Student61098893_fb89_44fb_ac2f_6d851ca81fec
+<has1#Student61098893_fb89_44fb_ac2f_6d851ca81fec> rdf:type owl:NamedIndividual ,
+                                                            <https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/has1#Student05da6a44_d2f4_463b_a73a_05939be51570> ;
+                                                   :has :HT1001 ,
+                                                        :HT1003 ,
+                                                        :HT1005 ,
+                                                        :HT1007 ,
+                                                        :HT1009 ,
+                                                        :HT1011 ,
+                                                        :HT1013 ,
+                                                        :HT1015 ,
+                                                        :HT1101 ,
+                                                        :HT1103 ;
+                                                   rdfs:label "Horsttoren"@en .
+
+
+###  has1#Student62243904_8897_481b_9bda_103c46f8c725
+<has1#Student62243904_8897_481b_9bda_103c46f8c725> rdf:type owl:NamedIndividual ,
+                                                            :Department ;
+                                                   rdfs:label "ENG"@en .
+
+
+###  has1#Student736679ef_0c03_42b0_b688_ba2c628f0f67
+<has1#Student736679ef_0c03_42b0_b688_ba2c628f0f67> rdf:type owl:NamedIndividual ,
+                                                            <https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/has1#Student05da6a44_d2f4_463b_a73a_05939be51570> ;
+                                                   :has :VR170 ,
+                                                        :VR171 ,
+                                                        :VR172 ,
+                                                        :VR173 ,
+                                                        :VR174 ,
+                                                        :VR175 ,
+                                                        :VR176 ,
+                                                        :VR177 ,
+                                                        :VR178 ,
+                                                        :VR179 ,
+                                                        :VR240 ,
+                                                        :VR330 ,
+                                                        :VR354 ,
+                                                        :VR369 ,
+                                                        :VR527 ;
+                                                   rdfs:label "Vrijhof"@en .
+
+
+###  has1#Student7c3c27ae_ab1e_490a_a1df_8f6027769d61
+<has1#Student7c3c27ae_ab1e_490a_a1df_8f6027769d61> rdf:type owl:NamedIndividual ,
+                                                            <https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/has1#Student05da6a44_d2f4_463b_a73a_05939be51570> ;
+                                                   :has :TL2307 ,
+                                                        :TL2308 ,
+                                                        :TL2309 ,
+                                                        :TL2310 ,
+                                                        :TL3189 ,
+                                                        :TL3190 ,
+                                                        :TL3313 ,
+                                                        :TL3314 ,
+                                                        :TL3315 ,
+                                                        :TL3316 ;
+                                                   rdfs:label "Technohal"@en .
+
+
+###  has1#Student835a6a86_ae38_4cc1_b95c_ac0aedd0411d
+<has1#Student835a6a86_ae38_4cc1_b95c_ac0aedd0411d> rdf:type owl:NamedIndividual ,
+                                                            <https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/has1#Student05da6a44_d2f4_463b_a73a_05939be51570> ;
+                                                   :has :ITC0-001 ,
+                                                        :ITC2-124 ,
+                                                        :ITC2-133 ,
+                                                        :ITC4-154 ,
+                                                        :ITC5-002 ;
+                                                   rdfs:label "ITC gebouw"@en .
+
+
+###  has1#Student93775e7d_995a_4151_8d4e_f7a58f9381ad
+<has1#Student93775e7d_995a_4151_8d4e_f7a58f9381ad> rdf:type owl:NamedIndividual ,
+                                                            <https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/has1#Student05da6a44_d2f4_463b_a73a_05939be51570> ;
+                                                   :has :PA07 ,
+                                                        :PA11 ,
+                                                        :PA12 ;
+                                                   rdfs:label "Pavilijoen"@en .
+
+
+###  has1#Student963955c9_8bb6_4111_a1dd_70ffdd44e194
+<has1#Student963955c9_8bb6_4111_a1dd_70ffdd44e194> rdf:type owl:NamedIndividual ,
+                                                            <https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/has1#Student05da6a44_d2f4_463b_a73a_05939be51570> ;
+                                                   :has :LI004 ,
+                                                        :LI009 ,
+                                                        :LI010 ,
+                                                        :LI104 ,
+                                                        :LI106 ,
+                                                        :LI107 ,
+                                                        :LI108 ;
+                                                   rdfs:label "Linde"@en .
+
+
+###  has1#Student99a5ae92_f0fd_46ab_bfc2_de4061f5d2bd
+<has1#Student99a5ae92_f0fd_46ab_bfc2_de4061f5d2bd> rdf:type owl:NamedIndividual ,
+                                                            :Department ;
+                                                   rdfs:label "THL"@en .
+
+
+###  has1#Studentad50a4af_07c2_4431_9c8a_533382b8d7d6
+<has1#Studentad50a4af_07c2_4431_9c8a_533382b8d7d6> rdf:type owl:NamedIndividual ,
+                                                            :Department ;
+                                                   rdfs:label "MATH"@en .
+
+
+###  has1#Studentb1a97bf0_36dd_4888_a142_3f6fb6b65c29
+<has1#Studentb1a97bf0_36dd_4888_a142_3f6fb6b65c29> rdf:type owl:NamedIndividual ,
+                                                            <https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/has1#Student05da6a44_d2f4_463b_a73a_05939be51570> ;
+                                                   :has :DR125 ,
+                                                        :DR126 ;
+                                                   rdfs:label "Drienerburght"@en .
+
+
+###  has1#Studentb4b66467_e611_4768_945f_5a496d43f38f
+<has1#Studentb4b66467_e611_4768_945f_5a496d43f38f> rdf:type owl:NamedIndividual ,
+                                                            <https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/has1#Student05da6a44_d2f4_463b_a73a_05939be51570> ;
+                                                   :has :SP222 ,
+                                                        :SP300 ,
+                                                        :SP301 ,
+                                                        :SP313 ,
+                                                        :SP414 ,
+                                                        :SP417 ,
+                                                        :SP422 ,
+                                                        :SP428 ,
+                                                        :SP432 ,
+                                                        :SP440 ,
+                                                        :SP600 ,
+                                                        :SP601 ,
+                                                        :SP617 ,
+                                                        :SP620 ,
+                                                        :SP625 ,
+                                                        :SPPR1 ,
+                                                        :SPPR2 ,
+                                                        :SPPR3 ,
+                                                        :SPPR4 ;
+                                                   rdfs:label "Spiegel"@en .
+
+
+###  has1#Studentb6674f0c_e3ea_49ef_83e0_37a92b66ef24
+<has1#Studentb6674f0c_e3ea_49ef_83e0_37a92b66ef24> rdf:type owl:NamedIndividual ,
+                                                            :Department ;
+                                                   rdfs:label "SE"@en .
+
+
+###  has1#Studentc847df20_2cd9_4d43_bcd2_8a0dee57f1bc
+<has1#Studentc847df20_2cd9_4d43_bcd2_8a0dee57f1bc> rdf:type owl:NamedIndividual ,
+                                                            <https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/has1#Student05da6a44_d2f4_463b_a73a_05939be51570> ;
+                                                   :has :RA1247 ,
+                                                        :RA1255 ,
+                                                        :RA1315 ,
+                                                        :RA1342 ,
+                                                        :RA1345 ,
+                                                        :RA1432 ,
+                                                        :RA2207 ,
+                                                        :RA2209 ,
+                                                        :RA2253 ,
+                                                        :RA2314 ,
+                                                        :RA3106 ,
+                                                        :RA3112 ,
+                                                        :RA3245 ,
+                                                        :RA3247 ,
+                                                        :RA3260 ,
+                                                        :RA3411 ,
+                                                        :RA4108 ,
+                                                        :RA4110 ,
+                                                        :RA4245 ,
+                                                        :RA4247 ,
+                                                        :RA4253 ,
+                                                        :RA4409 ,
+                                                        :RA4411 ,
+                                                        :RA5108 ,
+                                                        :RA5110 ,
+                                                        :RA5146 ,
+                                                        :RA5148 ;
+                                                   rdfs:label "Ravelign"@en .
+
+
+###  has1#Studentccae9fea_b990_40bf_82ed_48e81d036934
+<has1#Studentccae9fea_b990_40bf_82ed_48e81d036934> rdf:type owl:NamedIndividual ,
+                                                            :Department ;
+                                                   rdfs:label "AHS"@en .
+
+
+###  has1#Studentd3a0559c_1aaa_4e80_8eb6_7c3e4a812c33
+<has1#Studentd3a0559c_1aaa_4e80_8eb6_7c3e4a812c33> rdf:type owl:NamedIndividual ,
+                                                            :Department ;
+                                                   rdfs:label "ARTS"@en .
+
+
+###  has1#Studente17a727c_a8d6_490f_89fb_4ddd6fc0f822
+<has1#Studente17a727c_a8d6_490f_89fb_4ddd6fc0f822> rdf:type owl:NamedIndividual ,
+                                                            <https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/has1#Student05da6a44_d2f4_463b_a73a_05939be51570> ;
+                                                   :has :CR1101 ,
+                                                        :CR1333 ,
+                                                        :CR1428 ,
+                                                        :CR1430 ,
+                                                        :CR1436 ,
+                                                        :CR1438 ,
+                                                        :CR1506 ,
+                                                        :CR2020 ,
+                                                        :CR2022 ,
+                                                        :CR2025 ,
+                                                        :CR2028 ,
+                                                        :CR2030 ,
+                                                        :CR2054 ,
+                                                        :CR2056 ,
+                                                        :CR2201 ,
+                                                        :CR2506 ,
+                                                        :CR2542 ,
+                                                        :CR2544 ,
+                                                        :CR2628 ,
+                                                        :CR2630 ,
+                                                        :CR3054 ,
+                                                        :CR3213 ,
+                                                        :CR3220 ,
+                                                        :CR3222 ,
+                                                        :CR3226 ,
+                                                        :CR3228 ,
+                                                        :CR3244 ,
+                                                        :CR3712 ,
+                                                        :CR3726 ,
+                                                        :CR3731 ,
+                                                        :CR3737 ;
+                                                   rdfs:label "Carre"@en .
+
+
+###  has1#Studentf175b859_dd2b_44e0_a2f1_492c228b1def
+<has1#Studentf175b859_dd2b_44e0_a2f1_492c228b1def> rdf:type owl:NamedIndividual ,
+                                                            <https://raw.githubusercontent.com/rezafadaie/Linkeddata-project_task1/main/has1#Student05da6a44_d2f4_463b_a73a_05939be51570> ;
+                                                   :has :NL1004 ,
+                                                        :NL2004 ,
+                                                        :NL2006 ,
+                                                        :NL2008 ,
+                                                        :NL2011 ;
+                                                   rdfs:label "Nanolab"@en .
+
+
+###  has1#Studentff7947ba_482c_4177_879a_0ac066b943b2
+<has1#Studentff7947ba_482c_4177_879a_0ac066b943b2> rdf:type owl:NamedIndividual ,
+                                                            :Department ;
+                                                   rdfs:label "CFM"@en .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR1101
+:CR1101 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR1333
+:CR1333 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/9/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR1428
+:CR1428 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR1430
+:CR1430 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR1436
+:CR1436 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR1438
+:CR1438 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR1506
+:CR1506 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR2020
+:CR2020 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR2022
+:CR2022 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR2025
+:CR2025 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR2028
+:CR2028 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR2030
+:CR2030 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR2054
+:CR2054 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR2056
+:CR2056 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR2201
+:CR2201 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR2506
+:CR2506 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR2542
+:CR2542 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR2544
+:CR2544 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR2628
+:CR2628 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR2630
+:CR2630 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR3054
+:CR3054 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/11/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR3213
+:CR3213 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR3220
+:CR3220 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR3222
+:CR3222 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/11/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/9/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR3226
+:CR3226 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR3228
+:CR3228 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR3244
+:CR3244 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/9/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR3712
+:CR3712 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR3726
+:CR3726 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR3731
+:CR3731 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#CR3737
+:CR3737 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#DR125
+:DR125 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/11/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#DR126
+:DR126 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#DR127
+:DR127 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/11/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#HT1001
+:HT1001 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#HT1003
+:HT1003 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#HT1005
+:HT1005 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#HT1007
+:HT1007 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#HT1009
+:HT1009 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#HT1011
+:HT1011 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#HT1013
+:HT1013 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#HT1015
+:HT1015 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#HT1101
+:HT1101 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#HT1103
+:HT1103 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#ITC0-001
+:ITC0-001 rdf:type owl:NamedIndividual ,
+                   :MeetingRoom ,
+                   :SmallMeetingRoom ;
+          <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#ITC2-124
+:ITC2-124 rdf:type owl:NamedIndividual ,
+                   :MeetingRoom ,
+                   :SmallMeetingRoom ;
+          <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#ITC2-133
+:ITC2-133 rdf:type owl:NamedIndividual ,
+                   :MeetingRoom ,
+                   :SmallMeetingRoom ;
+          <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#ITC4-154
+:ITC4-154 rdf:type owl:NamedIndividual ,
+                   :MeetingRoom ,
+                   :SmallMeetingRoom ;
+          <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#ITC5-002
+:ITC5-002 rdf:type owl:NamedIndividual ,
+                   :MeetingRoom ,
+                   :SmallMeetingRoom ;
+          <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#LI004
+:LI004 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/11/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#LI009
+:LI009 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/11/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/9/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#LI010
+:LI010 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/9/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#LI104
+:LI104 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/11/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#LI106
+:LI106 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/11/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#LI107
+:LI107 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#LI108
+:LI108 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#NL1004
+:NL1004 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#NL2004
+:NL2004 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#NL2006
+:NL2006 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#NL2008
+:NL2008 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#NL2011
+:NL2011 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#PA07
+:PA07 rdf:type owl:NamedIndividual ,
+               :BigMeetingRoom ,
+               :MeetingRoom ;
+      <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#PA11
+:PA11 rdf:type owl:NamedIndividual ,
+               :BigMeetingRoom ,
+               :MeetingRoom ;
+      <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#PA12
+:PA12 rdf:type owl:NamedIndividual ,
+               :BigMeetingRoom ,
+               :MeetingRoom ;
+      <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA1247
+:RA1247 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA1255
+:RA1255 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/9/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA1315
+:RA1315 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA1342
+:RA1342 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/9/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA1345
+:RA1345 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA1432
+:RA1432 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA2207
+:RA2207 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA2209
+:RA2209 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA2253
+:RA2253 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA2314
+:RA2314 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA3106
+:RA3106 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA3112
+:RA3112 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA3245
+:RA3245 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA3247
+:RA3247 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA3260
+:RA3260 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA3411
+:RA3411 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/9/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA4108
+:RA4108 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA4110
+:RA4110 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA4245
+:RA4245 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA4247
+:RA4247 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA4253
+:RA4253 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA4409
+:RA4409 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA4411
+:RA4411 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA5108
+:RA5108 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA5110
+:RA5110 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA5146
+:RA5146 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#RA5148
+:RA5148 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP222
+:SP222 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP300
+:SP300 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP301
+:SP301 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP313
+:SP313 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/11/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP414
+:SP414 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP417
+:SP417 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP422
+:SP422 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP428
+:SP428 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP432
+:SP432 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP440
+:SP440 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP600
+:SP600 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP601
+:SP601 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP617
+:SP617 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP620
+:SP620 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SP625
+:SP625 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SPPR1
+:SPPR1 rdf:type owl:NamedIndividual ,
+                :MeetingRoom ,
+                :SmallMeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SPPR2
+:SPPR2 rdf:type owl:NamedIndividual ,
+                :MeetingRoom ,
+                :SmallMeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SPPR3
+:SPPR3 rdf:type owl:NamedIndividual ,
+                :MeetingRoom ,
+                :SmallMeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#SPPR4
+:SPPR4 rdf:type owl:NamedIndividual ,
+                :MeetingRoom ,
+                :SmallMeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Student1
+:Student1 rdf:type owl:NamedIndividual ,
+                   :GraduateStudent ;
+          :studies_in <has1#Studentd3a0559c_1aaa_4e80_8eb6_7c3e4a812c33> ;
+          <http://dbpedia.org/ontology/student> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Student2
+:Student2 rdf:type owl:NamedIndividual ,
+                   :GraduateStudent ;
+          :studies_in <has1#Studentad50a4af_07c2_4431_9c8a_533382b8d7d6> ;
+          <http://dbpedia.org/ontology/student> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Student3
+:Student3 rdf:type owl:NamedIndividual ,
+                   :GraduateStudent ;
+          :studies_in <has1#Studentad50a4af_07c2_4431_9c8a_533382b8d7d6> ;
+          <http://dbpedia.org/ontology/student> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Student4
+:Student4 rdf:type owl:NamedIndividual ,
+                   :UndergraduateStudent ;
+          :studies_in <has1#Studentd3a0559c_1aaa_4e80_8eb6_7c3e4a812c33> ;
+          <http://dbpedia.org/ontology/student> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Student5
+:Student5 rdf:type owl:NamedIndividual ,
+                   :UndergraduateStudent ;
+          :studies_in <has1#Student62243904_8897_481b_9bda_103c46f8c725> ;
+          <http://dbpedia.org/ontology/student> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Student6
+:Student6 rdf:type owl:NamedIndividual ,
+                   :UndergraduateStudent ;
+          :studies_in <has1#Studentd3a0559c_1aaa_4e80_8eb6_7c3e4a812c33> ;
+          <http://dbpedia.org/ontology/student> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#TL2307
+:TL2307 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#TL2308
+:TL2308 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#TL2309
+:TL2309 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#TL2310
+:TL2310 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#TL3189
+:TL3189 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#TL3190
+:TL3190 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#TL3313
+:TL3313 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#TL3314
+:TL3314 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#TL3315
+:TL3315 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#TL3316
+:TL3316 rdf:type owl:NamedIndividual ,
+                 :MeetingRoom ,
+                 :SmallMeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Teacher1
+:Teacher1 rdf:type owl:NamedIndividual ,
+                   :Teacher ;
+          :works_in <has1#Studentad50a4af_07c2_4431_9c8a_533382b8d7d6> ;
+          <http://linkedscience.org/teach/ns#teacher> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Teacher2
+:Teacher2 rdf:type owl:NamedIndividual ,
+                   :Teacher ;
+          :works_in <has1#Student99a5ae92_f0fd_46ab_bfc2_de4061f5d2bd> ;
+          <http://linkedscience.org/teach/ns#teacher> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Teacher3
+:Teacher3 rdf:type owl:NamedIndividual ,
+                   :Teacher ;
+          :works_in <has1#Student99a5ae92_f0fd_46ab_bfc2_de4061f5d2bd> ;
+          <http://linkedscience.org/teach/ns#teacher> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Teacher4
+:Teacher4 rdf:type owl:NamedIndividual ,
+                   :Teacher ;
+          :works_in <has1#Studentad50a4af_07c2_4431_9c8a_533382b8d7d6> ;
+          <http://linkedscience.org/teach/ns#teacher> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Teacher5
+:Teacher5 rdf:type owl:NamedIndividual ,
+                   :Teacher ;
+          :works_in <has1#Studentad50a4af_07c2_4431_9c8a_533382b8d7d6> ;
+          <http://linkedscience.org/teach/ns#teacher> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#Teacher6
+:Teacher6 rdf:type owl:NamedIndividual ,
+                   :Teacher ;
+          :works_in <has1#Studentb6674f0c_e3ea_49ef_83e0_37a92b66ef24> ;
+          <http://linkedscience.org/teach/ns#teacher> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR170
+:VR170 rdf:type owl:NamedIndividual ,
+                :MeetingRoom ,
+                :SmallMeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR171
+:VR171 rdf:type owl:NamedIndividual ,
+                :MeetingRoom ,
+                :SmallMeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR172
+:VR172 rdf:type owl:NamedIndividual ,
+                :MeetingRoom ,
+                :SmallMeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR173
+:VR173 rdf:type owl:NamedIndividual ,
+                :MeetingRoom ,
+                :SmallMeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR174
+:VR174 rdf:type owl:NamedIndividual ,
+                :MeetingRoom ,
+                :SmallMeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR175
+:VR175 rdf:type owl:NamedIndividual ,
+                :MeetingRoom ,
+                :SmallMeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR176
+:VR176 rdf:type owl:NamedIndividual ,
+                :MeetingRoom ,
+                :SmallMeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR177
+:VR177 rdf:type owl:NamedIndividual ,
+                :MeetingRoom ,
+                :SmallMeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR178
+:VR178 rdf:type owl:NamedIndividual ,
+                :MeetingRoom ,
+                :SmallMeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR179
+:VR179 rdf:type owl:NamedIndividual ,
+                :MeetingRoom ,
+                :SmallMeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR240
+:VR240 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/9/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR330
+:VR330 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR354
+:VR354 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR369
+:VR369 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                    <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#VR527
+:VR527 rdf:type owl:NamedIndividual ,
+                :BigMeetingRoom ,
+                :MeetingRoom ;
+       <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#ZI1016
+:ZI1016 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#ZI1061
+:ZI1061 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#ZI2022
+:ZI2022 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#ZI2105
+:ZI2105 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#ZI2126
+:ZI2126 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/11/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/9/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#ZI4070
+:ZI4070 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        :is_occupied <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/11/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> ,
+                     <http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#ZI4110
+:ZI4110 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#ZI5038
+:ZI5038 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#ZI5057
+:ZI5057 rdf:type owl:NamedIndividual ,
+                 :BigMeetingRoom ,
+                 :MeetingRoom ;
+        <https://schema.org/MeetingRoom> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM
+<http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#10:00_AM> rdf:type owl:NamedIndividual ,
+                                                                                            :Time ;
+                                                                                   <https://schema.org/Time> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022
+<http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/1/2022> rdf:type owl:NamedIndividual ,
+                                                                                            :Date ;
+                                                                                   <https://schema.org/Date> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022
+<http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/10/2022> rdf:type owl:NamedIndividual ,
+                                                                                             :Date ;
+                                                                                    <https://schema.org/Date> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/11/2022
+<http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/11/2022> rdf:type owl:NamedIndividual ,
+                                                                                             :Date ;
+                                                                                    <https://schema.org/Date> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022
+<http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/2/2022> rdf:type owl:NamedIndividual ,
+                                                                                            :Date ;
+                                                                                   <https://schema.org/Date> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022
+<http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/3/2022> rdf:type owl:NamedIndividual ,
+                                                                                            :Date ;
+                                                                                   <https://schema.org/Date> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022
+<http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/4/2022> rdf:type owl:NamedIndividual ,
+                                                                                            :Date ;
+                                                                                   <https://schema.org/Date> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022
+<http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/7/2022> rdf:type owl:NamedIndividual ,
+                                                                                            :Date ;
+                                                                                   <https://schema.org/Date> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022
+<http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/8/2022> rdf:type owl:NamedIndividual ,
+                                                                                            :Date ;
+                                                                                   <https://schema.org/Date> "" .
+
+
+###  http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/9/2022
+<http://www.semanticweb.org/refad/ontologies/2022/2/untitled-ontology-29#3/9/2022> rdf:type owl:NamedIndividual ,
+                                                                                            :Date ;
+                                                                                   <https://schema.org/Date> "" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
